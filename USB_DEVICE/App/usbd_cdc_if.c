@@ -49,7 +49,7 @@
  */
 
 /* USER CODE BEGIN PRIVATE_TYPES */
-extern char buffer[64];
+extern uint8_t buffer[64];
 /* USER CODE END PRIVATE_TYPES */
 
 /**
@@ -251,7 +251,7 @@ static int8_t CDC_Receive_FS(uint8_t *Buf, uint32_t *Len) {
 	/* USER CODE BEGIN 6 */
 	USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
 	USBD_CDC_ReceivePacket(&hUsbDeviceFS);
-	uint8_t len = (uint8_t*) Len;
+	uint8_t len = *Len;
 	memcpy(buffer, Buf, len);
 	return (USBD_OK);
 	/* USER CODE END 6 */

@@ -57,7 +57,7 @@ static void MX_GPIO_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-char buffer[64];
+uint8_t buffer[64];
 /* USER CODE END 0 */
 
 /**
@@ -98,8 +98,7 @@ int main(void) {
 		/* USER CODE END WHILE */
 
 		/* USER CODE BEGIN 3 */
-		CDC_Transmit_FS((uint8_t*) buffer, strlen(buffer));
-		sprintf("Input data:%s",buffer);
+		CDC_Transmit_FS((uint8_t*) buffer, strlen((char*) buffer));
 		HAL_Delay(10);
 	}
 	/* USER CODE END 3 */

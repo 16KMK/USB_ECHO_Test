@@ -89,7 +89,7 @@ int main(void) {
 	MX_GPIO_Init();
 	MX_USB_DEVICE_Init();
 	/* USER CODE BEGIN 2 */
-
+	//CDC_Transmit_FS((uint8_t*) buffer, strlen((char*) buffer));
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
@@ -98,8 +98,6 @@ int main(void) {
 		/* USER CODE END WHILE */
 
 		/* USER CODE BEGIN 3 */
-		CDC_Transmit_FS((uint8_t*) buffer, strlen((char*) buffer));
-		HAL_Delay(10);
 	}
 	/* USER CODE END 3 */
 }

@@ -253,6 +253,7 @@ static int8_t CDC_Receive_FS(uint8_t *Buf, uint32_t *Len) {
 	USBD_CDC_ReceivePacket(&hUsbDeviceFS);
 	uint8_t len = *Len;
 	memcpy(buffer, Buf, len);
+	CDC_Transmit_FS(buffer, len);
 	return (USBD_OK);
 	/* USER CODE END 6 */
 }
